@@ -50,6 +50,8 @@ h = h.replace(',', '.')
 h = h.replace(' ', '')
 # nadanie klasy
 h = float(h)
+
+# wyswietlenie i obliczenie pola
 print('Pole trójkąta:', a*h/2)
 
 input('Naciśnij enter, aby zakończyć program')
