@@ -44,7 +44,7 @@ a = a.replace(' ', '')
 a = float(a)
 
 # zapytanie o wysokosc
-h = float(input('Podaj wysokość'))
+h = input('Podaj wysokość')
 # aby nie bylo blednych znakow w float
 h = h.replace(',', '.')
 h = h.replace(' ', '')
