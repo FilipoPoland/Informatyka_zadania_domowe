@@ -1,11 +1,18 @@
+# zadanie 1. zapytaj o dwie frazy i zamien pierwsze dwa znaki z frazy 1 do frazy 2 i vice versa
+# zadanie 2. zapyta uzytkownika o imie wiek, przywitaj imieniem i powiedz ile lat zostalo mu do 100 lat
+# zadanie 3. oblicz pole trojkata na podstawie podstawy i wysokosci podanych przez uzytkownika
+
 # input polacz w jeden print odzielony spacja dwa pierwsze znaki str zamien na dwa pierwsze drugiego str
+
 # podanie frazy 1
 i1 = input('Podaj fraze 1')
 # podanie frazy 2
 i2 = input('Podaj fraze 2')
+
 # zastapienie pierwszych dwoch znakow pierwszego wyrazu pierwszymi dwoma z drugiego
-# zrobienie tego samego dla drugiej frazy
-print(i1.replace(i1[0:2], i2[0:2], 1), i2.replace(i2[0:2], i1[0:2], 1))
+print(i1.replace(i1[0:2], i2[0:2], 1),
+      # zrobienie tego samego dla drugiej frazy
+      i2.replace(i2[0:2], i1[0:2], 1))
 
 # zapytanie o imie, zdefiniowanie zmiennej
 imie = input('Podaj swoje imie: ')
@@ -28,8 +35,21 @@ print(f'Witaj, {imie} w {do100} osiągniesz wiek 100 lat')
 
 # oblicz pole trojkata o wymiarach podanych przez uzytkownika wysokosc i podstawa
 print('W celu obliczenia trójkąta...')
-a = float(input('Podaj wielkość podstawy: '))
+# zapytanie o wielkosc podstawy
+a = input('Podaj wielkość podstawy: ')
+# aby nie bylo blednych znakow w float
+a = a.replace(',', '.')
+a = a.replace(' ', '')
+# nadanie klasy
+a = float(a)
+
+# zapytanie o wysokosc
 h = float(input('Podaj wysokość'))
+# aby nie bylo blednych znakow w float
+h = h.replace(',', '.')
+h = h.replace(' ', '')
+# nadanie klasy
+h = float(h)
 print('Pole trójkąta:', a*h/2)
 
 input('Naciśnij enter, aby zakończyć program')
