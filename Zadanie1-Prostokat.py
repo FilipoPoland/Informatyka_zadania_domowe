@@ -9,8 +9,9 @@ a = ('#' + ' ' * 7 + '#' + '\n')
 '''
 print('#'*9+'\n'+('#'+' '*7+'#'+'\n')*3+'#'*9)
 '''
-
+# wyswietlenie prostokata
 print(b + '\n' + a * 3 + b)
+
 # zdefinowanie zmiennych dla trapezu
 d = ' '
 c = '#'
@@ -24,20 +25,21 @@ c6 = c + d * 9 + c
 c7 = c + d * 10 + c
 c8 = c * 12
 
-# przerwa miedzy jedna a druga figura
+# przerwa prostokat trapez
 print('\n')
+
 # wyswietlenie trapezu
-print(e + '\n' + c1 + '\n' + c2 + '\n' + c3 + '\n' + c4 +'\n' + c5 +'\n' + c6 + '\n' + c7 + '\n' + c8)
+print(e + '\n' + c1 + '\n' + c2 + '\n' + c3 + '\n' + c4 + '\n' + c5 + '\n' + c6 + '\n' + c7 + '\n' + c8)
 
 # prostokat uzytkownika
 x = 0
-while x<1:
+while x < 1:
     a = '#'
     b = ' '
     bok_a = int(input('Jak duży ma być bok a?'))
     bok_b = int(input('Jak duży ma być bok b?'))
 
-    print(a * bok_a +('\n' + a + b * (bok_a - 2) +a) * bok_b + '\n' + a * bok_a)
+    print(a * bok_a + ('\n' + a + b * (bok_a - 2) + a) * bok_b + '\n' + a * bok_a)
 
     f = int(input('Wprowadz 0, aby kontynuować program, a 1 aby go zakończyć.'))
     x = x + f
