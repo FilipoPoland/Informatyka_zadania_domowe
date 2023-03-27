@@ -2,6 +2,7 @@
 # zadanie 2. zapyta uzytkownika o imie wiek, przywitaj imieniem i powiedz ile lat zostalo mu do 100 lat
 # zadanie 3. oblicz pole trojkata na podstawie podstawy i wysokosci podanych przez uzytkownika
 
+# czesc 1
 # input polacz w jeden print odzielony spacja dwa pierwsze znaki str zamien na dwa pierwsze drugiego str
 
 # podanie frazy 1
@@ -14,6 +15,7 @@ print(i1.replace(i1[0:2], i2[0:2], 1),
       # zrobienie tego samego dla drugiej frazy
       i2.replace(i2[0:2], i1[0:2], 1))
 
+# czesc 2
 # zapytanie o imie, zdefiniowanie zmiennej
 imie = input('Podaj swoje imie: ')
 # zapytanie o wiek, zdefiniowanie zmiennej jako int
@@ -22,6 +24,7 @@ wiek = int(input('Podaj swój wiek: '))
 do100 = 100 - wiek
 print(f'Witaj, {imie} za {do100} lat osiągniesz wiek 100 lat')
 
+# dodatkowo
 # z data urodzenia
 
 # zapytanie o imie, zdefiniowanie zmiennej
@@ -32,7 +35,9 @@ wiek = int(input('Podaj swój rok urodzenia: '))
 do100 = wiek + 100
 # przywitanie uzytkownika z imienia i podanie roku w ktorym osiagnie wiek 100 lat
 print(f'Witaj, {imie} w {do100} osiągniesz wiek 100 lat')
+# koniec dodatkowo
 
+# czesc 3
 # oblicz pole trojkata o wymiarach podanych przez uzytkownika wysokosc i podstawa
 print('W celu obliczenia trójkąta...')
 # zapytanie o wielkosc podstawy
