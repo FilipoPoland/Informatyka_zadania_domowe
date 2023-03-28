@@ -6,13 +6,13 @@ from datetime import datetime
 # zwracajacy informacje czy jest to liczba calkowita jezeli tak to czy jest parzysta
 
 # zapytanie uzytkownika o zmienne
-# a = float(input('Podaj podstawę 1 trapezu'))
-# b = float(input('Podaj podstawę 2 trapezu'))
-# h = float(input('Podaj wysokość trapezu'))
+a = float(input('Podaj podstawę 1 trapezu: '))
+b = float(input('Podaj podstawę 2 trapezu: '))
+h = float(input('Podaj wysokość trapezu: '))
 
 # obliczenie pola trapezu
-# t = a * b / 2 * h
-t = 4.2
+t = a * b / 2 * h
+
 # sprawdzenie czy liczba jest calkowita
 print()
 if t % 1 == 0:
