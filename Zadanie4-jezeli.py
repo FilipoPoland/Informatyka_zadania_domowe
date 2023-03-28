@@ -5,6 +5,7 @@ from datetime import datetime
 # pole trapezu o podanych przez uzytkownika podstawie i wysokosci
 # zwracajacy informacje czy jest to liczba calkowita jezeli tak to czy jest parzysta
 
+print('Część 1')
 # zapytanie uzytkownika o zmienne
 a = float(input('Podaj podstawę 1 trapezu: '))
 b = float(input('Podaj podstawę 2 trapezu: '))
@@ -14,7 +15,6 @@ h = float(input('Podaj wysokość trapezu: '))
 t = a * b / 2 * h
 
 # sprawdzenie czy liczba jest calkowita
-print()
 if t % 1 == 0:
     # sprawdzenie parzystosci
     if t % 2 == 0:
@@ -29,6 +29,8 @@ else:
 # zadanie 2
 # zapytaj uzytkownika o imie, nastepnie policz ilosc znkow w podanym imieniu i powiedz czy jest podzielna przez 3
 
+# \n nie jest konieczne separuje poszczególne części zadania
+print('\nCześć 2')
 # poproszenie uzytkownika o imie
 i = input('Podaj swoje imię: ')
 # obliczenie dlugosci imienia
@@ -43,6 +45,8 @@ else:
 # zadanie 3
 # zapytaj o imie, wiek, czy mial w tym roku urodziny przywitaj go uzywajac tego imienia i zwracajacy poprawna
 # informacje w za ile w ktorym roku bedzie mial` 100 lat
+# \n nie jest konieczne separuje poszczególne części zadania
+print('\nCzęść 3.1')
 
 # data osiagniecia 100 sposob aktualny tylko jezeli aktualny rok to 2023 - bardziej podstawowy sposob
 
@@ -66,7 +70,8 @@ else:
 
 # to jest z data importowana z funkcj datetime pozwala na zmiane daty i zachowanie aktualnosci ponizszego zapisu
 # pozatym reszta dziala identycznie jak wyzej
-
+# \n nie jest konieczne separuje poszczególne części zadania
+print('\nCzęść 3.2')
 i = input('Podaj swoje imię: ')
 w = int(input('Podaj swój wiek: '))
 u = input('Jeżeli miałeś/miałaś w tym roku urodziny wprowadz "tak".')
