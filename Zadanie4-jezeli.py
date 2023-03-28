@@ -69,9 +69,9 @@ else:
 
 i = input('Podaj swoje imię: ')
 w = int(input('Podaj swój wiek: '))
-u = input('Jeżeli miałeś/miałaś w tym roku urodziny wprowadz "t".')
+u = input('Jeżeli miałeś/miałaś w tym roku urodziny wprowadz "tak".')
 
-if u == 't':
+if u == 'tak':
     r100 = datetime.now().year + 100 - w
     print(f'Witaj, {i} w roku {r100} będziesz miał/miała 100 lat.')
 else:
