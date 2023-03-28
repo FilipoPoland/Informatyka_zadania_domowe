@@ -1,3 +1,6 @@
+# przyda sie przy czesci 3
+from datetime import datetime
+
 # zadanie 1
 # pole trapezu o podanych przez uzytkownika podstawie i wysokosci
 # zwracajacy informacje czy jest to liczba calkowita jezeli tak to czy jest parzysta
@@ -46,12 +49,14 @@ w = int(input('Podaj swój wiek: '))
 u = input('Jeżeli miałeś/miałaś w tym roku urodziny wprowadz "tak".')
 
 if u == 'tak':
-    print(2023 + 100 - w)
+    r100 = 2023 + 100 - w
+    print(f'Witaj, {i} w roku {r100} będziesz miał/miała 100 lat.')
 else:
-    print(2023 + 99 - w)
+    r100 = 2023 + 99 - w
+    print(f'Witaj, {i} w roku {r100} będziesz miał/miała 100 lat.')
 
 # to jest z data importowana z ponizszej funkcj
-from datetime import datetime
+
 
 i = input('Podaj swoje imię: ')
 w = int(input('Podaj swój wiek: '))
@@ -59,7 +64,7 @@ u = input('Jeżeli miałeś/miałaś w tym roku urodziny wprowadz "t".')
 
 if u == 't':
     r100 = datetime.now().year + 100 - w
-    print(f'Witaj, {i} w roku {r100} będziesz miał 100 lat.')
+    print(f'Witaj, {i} w roku {r100} będziesz miał/miała 100 lat.')
 else:
     r100 = datetime.now().year + 99 - w
-    print(f'Witaj, {i} w roku {r100} będziesz miał 100 lat.')
+    print(f'Witaj, {i} w roku {r100} będziesz miał/miała 100 lat.')
