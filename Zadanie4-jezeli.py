@@ -1,4 +1,4 @@
-# przyda sie przy czesci 3
+# przyda sie przy czesci 3 podejsciu
 from datetime import datetime
 
 # zadanie 1
