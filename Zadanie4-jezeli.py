@@ -12,7 +12,7 @@ b = float(input('Podaj podstawę 2 trapezu: '))
 h = float(input('Podaj wysokość trapezu: '))
 
 # obliczenie pola trapezu
-t = a * b / 2 * h
+t = (a + b) / 2 * h
 
 # sprawdzenie czy liczba jest calkowita
 if t % 1 == 0:
@@ -21,10 +21,8 @@ if t % 1 == 0:
         print(f'Pole trapezu wynosi {t} i jest całkowite, parzyste')
     else:
         print(f'Pole trapezu wynosi {t} i jest całkowite, nieparzyste')
-
-# gdy nie jest calkowita, nie może być parzyste
 else:
-    print(f'Pole trapezu wynosi {t} i jest niecałkowite, nieparzyste')
+    print(f'Pole trapezu wynosi {t} i jest niecałkowite.')
 
 # zadanie 2
 # zapytaj uzytkownika o imie, nastepnie policz ilosc znkow w podanym imieniu i powiedz czy jest podzielna przez 3
