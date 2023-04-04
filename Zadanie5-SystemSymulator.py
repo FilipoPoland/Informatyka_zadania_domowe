@@ -205,7 +205,9 @@ while end:
 
     # sprawdzenie loginu
     if login in l_user:
+        # index loginu aby wiedziec ktore haslo sprawdzic
         index = l_user.index(login)
+        # zapytanie o haslo
         haslo = input('Podaj hasło: ')
         # sprawdzenie prawdziwosci hasla
         if haslo in l_pass[index]:
