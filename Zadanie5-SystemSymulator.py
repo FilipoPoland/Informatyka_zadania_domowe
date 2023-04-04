@@ -6,13 +6,15 @@
 # mozliwosc wylogowania, ponownego zalogowania bez restartu
 # mozna:
 # ograniczyc ilosc mozliwych podejsc do logowaia
+# u mnie jako zmienna nazwana ticker
 
 from random import randint, shuffle
 # Troche latwiej mi bylo zwiekszyc przejrzystosc reszty (przynajmniej moim zdaniem
 # czy uzytkownik chce sie logowac
-
-
 # Zdefiniowanie paru funkcji
+
+
+# przyda sie jako komunikat czy uzytkownik chce sie logowac
 def chec():
     c = input('Czy chcesz sie zalogowac?(t/n): ')
     if c == 't':
@@ -34,7 +36,7 @@ def pomoc():
           'Aby zakończyć program wpisz: wyjdz')
 
 
-# pod proces rysowania prostokata na zadanie uzytkownika
+# dodatkowo - pod proces rysowania prostokata na zadanie uzytkownika
 def prostokat():
     # zdefiniowanie niezbednych zmiennych dla narysownia prostokata
     a = '#'
@@ -46,7 +48,7 @@ def prostokat():
     print(a * bok_a + ('\n' + a + b * (bok_a - 2) + a) * bok_b + '\n' + a * bok_a)
 
 
-# oblicznie pola trapezu
+# dodatkowo - oblicznie pola trapezu
 def trapezpole():
     print('W celu obliczenia pola trapezu: ')
     # zapytanie o wymiary
@@ -58,7 +60,7 @@ def trapezpole():
     print((a + b) / 2 * h)
 
 
-# gra zgadywanie liczby
+# dodatkowo - gra zgadywanie liczby
 def gra_los():
     liczba = randint(1, 100)
     counter_los = 0
@@ -78,7 +80,7 @@ def gra_los():
             print('Moja liczba jest większa.')
 
 
-# gra w kolko i krzyzyk
+# dodatkowo - gra w kolko i krzyzyk
 def kk():
     def plansza(stan):
         a = 0
