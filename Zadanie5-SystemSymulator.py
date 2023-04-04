@@ -212,6 +212,8 @@ while end:
             logged = True
             print('Poprawne logowanie')
             pomoc()
+            # reset tickera, aby program mial poprawna wartosc po wylogowaniu
+            ticker = 1
             # podczas bycia zalogowanym beda dostepne komendy opisane wewnatrz funkcji while
             while logged:
                 komenda = input('Komenda: ')
@@ -233,6 +235,9 @@ while end:
                     logged = False
                     print('Zostałeś wylogowany.')
                 if komenda == 'wyjdz':
+                    # opuszczenie petli zalogowania
+                    logged = False
+                    # opuszczenie petli systemu
                     end = False
         # gdy zostanie podane zle haslo
         else:
