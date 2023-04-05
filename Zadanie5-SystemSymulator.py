@@ -186,7 +186,7 @@ ticker = 1
 l_user = ['admin']
 l_pass = ['AdmiN']
 
-end = True
+end = chec()
 while end:
     end = chec()
     # zapyttanie uzytkownika czy ma juz konto
