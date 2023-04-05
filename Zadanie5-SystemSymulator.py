@@ -8,10 +8,8 @@
 # ograniczyc ilosc mozliwych podejsc do logowaia
 # u mnie jako zmienna nazwana ticker
 
-import Zadanie5_list
-
 from random import randint, shuffle
-# Troche latwiej mi bylo zwiekszyc przejrzystosc reszty (przynajmniej moim zdaniem
+# Troche latwiej mi bylo zwiekszyc przejrzystosc reszty (przynajmniej moim zdaniem uzywajac definiowania)
 # czy uzytkownik chce sie logowac
 # Zdefiniowanie paru funkcji
 
@@ -197,9 +195,9 @@ while chec():
     if nu == 'n':
         print('OK! Czas stowrzyć i zapisać twoje konto')
         # zdefiniowanie nowego loginu
-        Zadanie5_list.users(input('Podaj nazwę nowego użytkownika: '))
+        l_user.append(input('Podaj nazwę nowego użytkownika: '))
         # zdefiniowanie hasla do nowego konta
-        Zadanie5_list.passwords(input('Podaj hasło do nowego konta: '))
+        l_pass.append(input('Podaj hasło do nowego konta: '))
 
     # wyswietlenie ilosci poprzednich podejsc
     print(f'Podejście {ticker} z 5.')
@@ -242,12 +240,9 @@ while chec():
                 if komenda == 'logout':
                     logged = False
                     print('Zostałeś wylogowany.')
-                if komenda == 'wyjdz':
-                    # opuszczenie petli zalogowania
-                    logged = False
-                    # opuszczenie petli systemu
-                    end = False
                     chec()
+                if komenda == 'wyjdz':
+                    break
         # gdy zostanie podane zle haslo
         else:
             print('Błędne hasło.')
