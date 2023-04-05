@@ -186,17 +186,18 @@ ticker = 1
 l_user = ['admin']
 l_pass = ['AdmiN']
 
-end = chec()
-while end:
-    end = chec()
-    # zapyttanie uzytkownika czy ma juz konto
+
+while chec():
+
+    # zapytanie uzytkownika czy ma juz konto
     nu = input('Czy jesteś istniejącym użytkownikiem? (t/n)')
     # zdefiniowanie nowego konta
     if nu == 'n':
+        print('OK! Czas stowrzyć i zapisać twoje konto')
         # zdefiniowanie nowego loginu
-        l_user.append(input('Podaj nazwę użytkownika: '))
+        l_user.append(input('Podaj nazwę nowego użytkownika: '))
         # zdefiniowanie hasla do nowego konta
-        l_pass.append(input('Podaj hasło do konta: '))
+        l_pass.append(input('Podaj hasło do nowego konta: '))
 
     # wyswietlenie ilosci poprzednich podejsc
     print(f'Podejście {ticker} z 5.')
@@ -209,8 +210,11 @@ while end:
         index = l_user.index(login)
         # zapytanie o haslo
         haslo = input('Podaj hasło: ')
+        if haslo == '':
+            print('Błędne hasło.')
+            ticker += 1
         # sprawdzenie prawdziwosci hasla
-        if haslo in l_pass[index]:
+        elif haslo in l_pass[index]:
             logged = True
             print('Poprawne logowanie')
             pomoc()
@@ -241,6 +245,7 @@ while end:
                     logged = False
                     # opuszczenie petli systemu
                     end = False
+                    chec()
         # gdy zostanie podane zle haslo
         else:
             print('Błędne hasło.')
