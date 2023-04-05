@@ -9,6 +9,7 @@
 # u mnie jako zmienna nazwana ticker
 
 from random import randint, shuffle
+
 # Troche latwiej mi bylo zwiekszyc przejrzystosc reszty (przynajmniej moim zdaniem uzywajac definiowania)
 # czy uzytkownik chce sie logowac
 # Zdefiniowanie paru funkcji
@@ -186,12 +187,11 @@ ticker = 1
 l_user = ['admin']
 l_pass = ['AdmiN']
 
-
 while chec():
-
     # zapytanie uzytkownika czy ma juz konto
     nu = input('Czy jesteś istniejącym użytkownikiem? (t/n)')
     # zdefiniowanie nowego konta
+    # nie zostaje w pamieci po zamknieciu wiec powiedzialbym ze to gimic
     if nu == 'n':
         print('OK! Czas stowrzyć i zapisać twoje konto')
         # zdefiniowanie nowego loginu
@@ -243,13 +243,14 @@ while chec():
                     chec()
                 if komenda == 'wyjdz':
                     break
+
         # gdy zostanie podane zle haslo
         else:
             print('Błędne hasło.')
             ticker += 1
     # aby ustawic ograniczenie podejsc i zakonczyc program
     elif ticker > 4:
-        end = False
+        break
     # gdy zostanie podany zly login
     else:
         print('Błędny login.')
