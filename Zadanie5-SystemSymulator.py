@@ -8,6 +8,8 @@
 # ograniczyc ilosc mozliwych podejsc do logowaia
 # u mnie jako zmienna nazwana ticker
 
+import Zadanie5_list
+
 from random import randint, shuffle
 # Troche latwiej mi bylo zwiekszyc przejrzystosc reszty (przynajmniej moim zdaniem
 # czy uzytkownik chce sie logowac
@@ -195,9 +197,9 @@ while chec():
     if nu == 'n':
         print('OK! Czas stowrzyć i zapisać twoje konto')
         # zdefiniowanie nowego loginu
-        l_user.append(input('Podaj nazwę nowego użytkownika: '))
+        Zadanie5_list.users(input('Podaj nazwę nowego użytkownika: '))
         # zdefiniowanie hasla do nowego konta
-        l_pass.append(input('Podaj hasło do nowego konta: '))
+        Zadanie5_list.passwords(input('Podaj hasło do nowego konta: '))
 
     # wyswietlenie ilosci poprzednich podejsc
     print(f'Podejście {ticker} z 5.')
