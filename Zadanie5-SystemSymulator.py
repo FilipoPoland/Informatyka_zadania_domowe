@@ -9,6 +9,8 @@
 # u mnie jako zmienna nazwana ticker
 
 from random import randint, shuffle
+
+# !!!! IMPORTANT !!!!
 # plik z loginami i haslami
 from Database import l_user, l_pass
 
