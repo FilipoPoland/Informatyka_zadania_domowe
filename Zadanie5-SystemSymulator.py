@@ -19,21 +19,31 @@ from Database import l_user, l_pass
 
 # przyda sie jako komunikat czy uzytkownik chce sie logowac
 def chec():
-    c = input('Czy chcesz sie zalogowac?(t/n): ')
-    if c == 't':
-        return True
-    else:
-        return False
+    if komenda == 'wyjdz':
+        czylogowac = 'n'
+    c_question = True
+
+    while c_question:
+        if komenda != 'wyjdz':
+            czylogowac = input('Czy chcesz sie zalogowac?(t/n): ')
+        if czylogowac == 't':
+            c_question = False
+            return True
+        elif czylogowac == 'n' or komenda == 'wyjdz':
+            c_question = False
+            return False
 
 
 # wyswietlany komunikat na zadanie uzytkownika
 def pomoc():
-    print('Aby wyświetlić uśmiechniętą minkę wpisz: uśmiech.\n'
+    print(f'Aby wyświetlić uśmiechniętą minkę wpisz: uśmiech.\n'
           'Aby wyświetlić smutną minkę wpisz: smutek.\n'
           'Aby wyświetlić prostokąt wpisz: prostokat.\n'
           'Aby obliczyć pole trapezu wpisz: trapez pole.\n'
           'Aby zagrać w grę z losowanie liczby wpisz: gra losowanie.\n'
           'Aby zagrać w kółko i krzyżyk wpisz: kółko i krzyżyk.\n'
+          'Aby wyświetlić pole trójkątu wpisz: trójkąt pole. \n'
+          'Aby usunąć wszystkich zapamiętanych użytkowników wpisz: purge. \n'
           'Aby wyświetlić komendy wpisz: pomoc.\n'
           'Aby się wylogować wpisz: logout.\n'
           'Aby zakończyć program wpisz: wyjdz')
@@ -49,6 +59,18 @@ def prostokat():
     bok_b = int(input('Jak duży ma być bok b?'))
     # narysowanie prostokata
     print(a * bok_a + ('\n' + a + b * (bok_a - 2) + a) * bok_b + '\n' + a * bok_a)
+
+
+def trojkat_pole():
+    print('Wyświetlmy trójkat: ')
+    h = input('Podaj wysokość: ')
+    h.replace(',', '.').replace(' ', '')
+    h = float(h)
+    a = input('Podaj długość podstawy: ')
+    a.replace(',', '.').replace(' ', '')
+    a = float(a)
+    pole = (a * h) / 2
+    print(pole)
 
 
 # dodatkowo - oblicznie pola trapezu
@@ -170,7 +192,6 @@ def kk():
         shuffle(list2)
         los = list2[0]
         del (list2[0])
-        # nwm czemu to mu sie nie podoba ale dziala
         list1[los] = 0
         plansza(list1)
         x = sprawdz(list1, zwyciestwo, list2)
@@ -186,32 +207,69 @@ def kk():
 
 # zdefiniowanie wstepnych zmiennych
 ticker = 1
+# aby program wiedzial o jakiej zmiennej mowie(jest w definicji chec)
+komenda = ''
+
 
 while chec():
     # zapytanie uzytkownika czy ma juz konto
-    nu = input('Czy jesteś istniejącym użytkownikiem? (t/n)')
+    nu_question = True
+    while nu_question:
+        nu = input('Czy jesteś istniejącym użytkownikiem? (t/n)')
+        if nu == 't':
+            nu_question = False
 
-    # zdefiniowanie nowego konta
-    if nu == 'n':
-        print('OK! Czas stowrzyć i zapisać twoje konto')
-        # zdefiniowanie nowego loginu
-        l_user.append(input('Podaj nazwę nowego użytkownika: '))
-        # zdefiniowanie hasla do nowego konta
-        l_pass.append(input('Podaj hasło do nowego konta: '))
+        # zdefiniowanie nowego konta
+        elif nu == 'n':
+            # komunikat powitalny w tworzeniu nowego hasla
+            print('OK! Czas stowrzyć i zapisać twoje konto')
 
-        # zapisanie obu list jako odzielny plik dzieki temu nie tracimy nowych kont
-        with open('Database.py', 'w') as file:
-            file.write('l_user = ' + str(l_user) + '\n' + 'l_pass = ' + str(l_pass))
+            # petla prawdziwa dopoki uzytkownik nie poda loginu nie bedacego w istniejacej bazie
+            n_user_state = True
+            while n_user_state:
+                # zdefiniowanie nowego loginu
+                login1 = input('Podaj nazwę nowego użytkownika: ')
+                # sprawdzenie czy login istnie na liscie
+                if login1 not in l_user:
+                    l_user.append(login1)
+
+                    # aby nie podajac hasla nie trzeba bylo powtarzac calego procesu
+                    n_pass_state = True
+                    while n_pass_state:
+
+                        # zdefiniowanie hasla do nowego konta
+                        password1 = (input('Podaj hasło do nowego konta: '))
+
+                        # warunek - gdy haslo nie jest puste wykonaj
+                        if password1 != '':
+                            l_pass.append(password1)
+                            # zakonczenie petli while hasla
+                            n_pass_state = False
+
+                            # zapisanie obu list jako odzielny plik dzieki temu nie tracimy nowych kont
+                            with open('Database.py', 'w') as file:
+                                file.write('l_user = ' + str(l_user) + '\n' + 'l_pass = ' + str(l_pass) + '\n')
+                            # zakonczenie petli gdy uzytkownika
+                            n_user_state = False
+                        else:
+                            # na wypadek nie podania hasla
+                            print('Hasło nie może być puste. Proszę podaj hasło.')
+                else:
+                    # gdy uzytkownik poda cos co nie jest inne od istniejacych na liscie
+                    # l_user elementow otrzyma komunikat
+                    print('Ta nazwa użytkownika istnieje. Proszę podać inną.')
+            # zamkniecie petli pytania o to czy stworzyc nowego uzytkownika
+            nu_question = False
 
     # wyswietlenie ilosci poprzednich podejsc
     print(f'Podejście {ticker} z 5.')
     # zapytanie uzytkownika o login
-    login = input('Podaj login: ')
 
+    login2 = input('Podaj login: ')
     # sprawdzenie loginu
-    if login in l_user:
+    if login2 in l_user:
         # index loginu aby wiedziec ktore haslo sprawdzic
-        index = l_user.index(login)
+        index = l_user.index(login2)
         # zapytanie o haslo
         haslo = input('Podaj hasło: ')
         if haslo == '':
@@ -239,12 +297,19 @@ while chec():
                     gra_los()
                 if komenda == 'kółko i krzyżyk':
                     kk()
+                if komenda == 'trójkąt pole':
+                    trojkat_pole()
                 if komenda == 'pomoc':
                     pomoc()
+                if komenda == 'purge':
+                    print('Wpisując hasło super admina usuniesz wszystkich dotychczas zapisanych użytkowników: ')
+                    s_admin_pass = input()
+                    if s_admin_pass == '123Super_Trudne_Hasło_132Nie_Idzie_Jak_Masło':
+                        with open('Database.py', 'w') as file:
+                            file.write('l_user = []\nl_pass = []')
                 if komenda == 'logout':
                     logged = False
                     print('Zostałeś wylogowany.')
-                    chec()
                 if komenda == 'wyjdz':
                     break
 

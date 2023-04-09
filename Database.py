@@ -1,2 +1,2 @@
-l_user = ['admin', 'Filip']
-l_pass = ['AdmiN', 'Filip']
+l_user = []
+l_pass = []
