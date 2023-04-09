@@ -11,12 +11,14 @@
 from random import randint, shuffle
 
 # !!!! IMPORTANT !!!!
-# plik z loginami i haslami
+# plik z loginami i haslami jest niezbedny plik Database.py zawierajacy dwie listy oznaczone l_user oraz l_pass
+# od ich zawartosci bedzie zalezalo kto moze sie zalogowac. Pozostawienie tych list pustymi jest w porzadku. Program
+# pozwala ustawic nowa nazwe uzytkownika i haslo do tego konta[nie pozwala na puste haslo]
 from Database import l_user, l_pass
 
 
 # Troche latwiej mi bylo zwiekszyc przejrzystosc reszty (przynajmniej moim zdaniem uzywajac definiowania)
-# Zdefiniowanie paru funkcji
+# Zdefiniowanie funkcji
 
 
 # przyda sie jako komunikat czy uzytkownik chce sie logowac
@@ -288,7 +290,7 @@ while chec():
             while logged:
                 komenda = input('Komenda: ')
                 if komenda == 'uśmiech':
-                    print(':)')
+                    print(':D')
                 if komenda == 'smutek':
                     print(':(')
                 if komenda == 'prostokat':
