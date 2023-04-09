@@ -9,9 +9,11 @@
 # u mnie jako zmienna nazwana ticker
 
 from random import randint, shuffle
+# plik z loginami i haslami
+from Database import l_user, l_pass
+
 
 # Troche latwiej mi bylo zwiekszyc przejrzystosc reszty (przynajmniej moim zdaniem uzywajac definiowania)
-# czy uzytkownik chce sie logowac
 # Zdefiniowanie paru funkcji
 
 
@@ -184,20 +186,22 @@ def kk():
 
 # zdefiniowanie wstepnych zmiennych
 ticker = 1
-l_user = ['admin']
-l_pass = ['AdmiN']
 
 while chec():
     # zapytanie uzytkownika czy ma juz konto
     nu = input('Czy jesteś istniejącym użytkownikiem? (t/n)')
+
     # zdefiniowanie nowego konta
-    # nie zostaje w pamieci po zamknieciu wiec powiedzialbym ze to gimic
     if nu == 'n':
         print('OK! Czas stowrzyć i zapisać twoje konto')
         # zdefiniowanie nowego loginu
         l_user.append(input('Podaj nazwę nowego użytkownika: '))
         # zdefiniowanie hasla do nowego konta
         l_pass.append(input('Podaj hasło do nowego konta: '))
+
+        # zapisanie obu list jako odzielny plik dzieki temu nie tracimy nowych kont
+        with open('Database.py', 'w') as file:
+            file.write('l_user = ' + str(l_user) + '\n' + 'l_pass = ' + str(l_pass))
 
     # wyswietlenie ilosci poprzednich podejsc
     print(f'Podejście {ticker} z 5.')
@@ -248,9 +252,11 @@ while chec():
         else:
             print('Błędne hasło.')
             ticker += 1
+
     # aby ustawic ograniczenie podejsc i zakonczyc program
     elif ticker > 4:
         break
+
     # gdy zostanie podany zly login
     else:
         print('Błędny login.')
