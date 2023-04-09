@@ -21,17 +21,17 @@ from Database import l_user, l_pass
 def chec():
     if komenda == 'wyjdz':
         czylogowac = 'n'
+    else:
+        czylogowac = input('Czy chcesz sie zalogowac?(t/n): ')
     c_question = True
 
     while c_question:
-        if komenda != 'wyjdz':
-            czylogowac = input('Czy chcesz sie zalogowac?(t/n): ')
         if czylogowac == 't':
-            c_question = False
             return True
-        elif czylogowac == 'n' or komenda == 'wyjdz':
-            c_question = False
+        elif czylogowac == 'n':
             return False
+        else:
+            czylogowac = input('Czy chcesz sie zalogowac?(t/n): ')
 
 
 # wyswietlany komunikat na zadanie uzytkownika
@@ -304,6 +304,7 @@ while chec():
                 if komenda == 'purge':
                     print('Wpisując hasło super admina usuniesz wszystkich dotychczas zapisanych użytkowników: ')
                     s_admin_pass = input()
+                    # nadpisuje baze danych z haslami i loginami pustymi listami tylko przy podaniu ponizszego hasla
                     if s_admin_pass == '123Super_Trudne_Hasło_132Nie_Idzie_Jak_Masło':
                         with open('Database.py', 'w') as file:
                             file.write('l_user = []\nl_pass = []')
