@@ -11,10 +11,10 @@
 from random import randint, shuffle
 
 # !!!! IMPORTANT !!!!
-# plik z loginami i haslami jest niezbedny plik Database.py zawierajacy dwie listy oznaczone l_user oraz l_pass
+# plik z loginami i haslami jest niezbedny plik Database_accounts.py zawierajacy dwie listy oznaczone l_user oraz l_pass
 # od ich zawartosci bedzie zalezalo kto moze sie zalogowac. Pozostawienie tych list pustymi jest w porzadku. Program
 # pozwala ustawic nowa nazwe uzytkownika i haslo do tego konta[nie pozwala na puste haslo]
-from Database import l_user, l_pass
+from Database_accounts import l_user, l_pass
 
 
 # Troche latwiej mi bylo zwiekszyc przejrzystosc reszty (przynajmniej moim zdaniem uzywajac definiowania)
@@ -251,7 +251,7 @@ while chec():
                             n_pass_state = False
 
                             # zapisanie obu list jako odzielny plik dzieki temu nie tracimy nowych kont
-                            with open('Database.py', 'w') as file:
+                            with open('Database_accounts.py', 'w') as file:
                                 file.write('l_user = ' + str(l_user) + '\n' + 'l_pass = ' + str(l_pass) + '\n')
                             # zakonczenie petli gdy uzytkownika
                             n_user_state = False
@@ -310,7 +310,7 @@ while chec():
                     s_admin_pass = input()
                     # nadpisuje baze danych z haslami i loginami pustymi listami tylko przy podaniu ponizszego hasla
                     if s_admin_pass == '123Super_Trudne_Hasło_132Nie_Idzie_Jak_Masło':
-                        with open('Database.py', 'w') as file:
+                        with open('Database_accounts.py', 'w') as file:
                             file.write('l_user = []\nl_pass = []')
                 if komenda == 'logout':
                     logged = False
