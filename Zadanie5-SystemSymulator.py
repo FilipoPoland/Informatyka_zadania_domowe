@@ -200,7 +200,16 @@ def kk():
         plansza(list1)
         x = sprawdz(list1, zwyciestwo, list2)
         if x:
-            user = int(input('Podaj pole(zakres 1-9): '))
+            y = True
+
+            while y:
+                try:
+                    user = int(input('Podaj pole(zakres 1-9): '))
+                    if user < 10:
+                        y = False
+                except:
+                    print('Została podana nie poprawna wartość.')
+
             user -= 1
             list1[user] = 'X'
             list2.remove(user)
