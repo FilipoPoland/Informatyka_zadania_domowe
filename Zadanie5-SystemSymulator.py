@@ -340,3 +340,5 @@ while chec():
     else:
         print('Błędny login.')
         ticker += 1
+
+# Filip Kozlowski
