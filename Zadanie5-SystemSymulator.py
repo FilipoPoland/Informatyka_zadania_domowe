@@ -256,13 +256,12 @@ while chec():
                         # warunek - gdy haslo nie jest puste wykonaj
                         if password1 != '':
                             l_pass.append(password1)
-                            # zakonczenie petli while hasla
-                            n_pass_state = False
-
                             # zapisanie obu list jako odzielny plik dzieki temu nie tracimy nowych kont
                             with open('Database_accounts.py', 'w') as file:
                                 file.write('l_user = ' + str(l_user) + '\n' + 'l_pass = ' + str(l_pass) + '\n')
-                            # zakonczenie petli gdy uzytkownika
+                            # zakonczenie petli while hasla
+                            n_pass_state = False
+                            # zkonczenie petli uzytkownika
                             n_user_state = False
                         else:
                             # na wypadek nie podania hasla
