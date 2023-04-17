@@ -318,7 +318,7 @@ while chec():
                     print('Wpisując hasło super admina usuniesz wszystkich dotychczas zapisanych użytkowników: ')
                     s_admin_pass = input()
                     # nadpisuje baze danych z haslami i loginami pustymi listami tylko przy podaniu ponizszego hasla
-                    if s_admin_pass == '123Super_Trudne_Hasło_132Nie_Idzie_Jak_Masło':
+                    if s_admin_pass == '123Super_Trudne_Haslo_132Nie_Idzie_Jak_Maslo':
                         with open('Database_accounts.py', 'w') as file:
                             file.write('l_user = []\nl_pass = []')
                 if komenda == 'logout':
