@@ -16,7 +16,6 @@ from random import randint, shuffle
 # pozwala ustawic nowa nazwe uzytkownika i haslo do tego konta[nie pozwala na puste haslo]
 from Database_accounts import l_user, l_pass
 
-
 # Troche latwiej mi bylo zwiekszyc przejrzystosc reszty (przynajmniej moim zdaniem uzywajac definiowania)
 # Zdefiniowanie funkcji
 
@@ -276,8 +275,8 @@ while chec():
     # wyswietlenie ilosci poprzednich podejsc
     print(f'Podejście {ticker} z 5.')
     # zapytanie uzytkownika o login
-
     login2 = input('Podaj login: ')
+
     # sprawdzenie loginu
     if login2 in l_user:
         # index loginu aby wiedziec ktore haslo sprawdzic
