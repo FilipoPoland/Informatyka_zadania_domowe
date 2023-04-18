@@ -308,6 +308,7 @@ while chec():
                     gra_los()
                 if komenda == 'kółko i krzyżyk':
                     kk()
+
                 if komenda == 'trójkąt pole':
                     trojkat_pole()
                 if komenda == 'pomoc':
