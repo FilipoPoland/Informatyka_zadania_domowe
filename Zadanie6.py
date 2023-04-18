@@ -4,5 +4,10 @@
  list1 = []
  for i in range(5):
      u_input = input(f'Podaj wartość do {i} pozycji listy: ')
-
+try:
+int
+float
+Bool
+list
+str
      list1.append()
