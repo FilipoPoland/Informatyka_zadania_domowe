@@ -30,4 +30,11 @@ for i in range(5):
 for j in range(5):
     print(type(list1[j]))
 
-print(list1)
+while True:
+    try:
+        k = int(input('Podaj index, który wyświetlić 1-5: '))
+        k -= 1
+        print(list1[k])
+        break
+    except:
+        print('Błędna wartość indexu')
