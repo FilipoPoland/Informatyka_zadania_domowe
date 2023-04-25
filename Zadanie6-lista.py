@@ -7,16 +7,18 @@ print('Program prosi o 5 wartości które będzie próbował zrozumieć:\n'
       '- Liczby należy wprowadzić używając kropki jako separatora dziesiętnego\n'
       '  w innym razie będzie zaklasyfikowana jako tekst,\n')
 
+cusError = ''
+
 for i in range(5):
     u_input = input(f'Podaj {i + 1} wyrażenie w liście: ')
     try:
         interpretation = int(u_input)
         list1.append(interpretation)
-    except:
+    except cusError:
         try:
             interpretation = float(u_input)
             list1.append(interpretation)
-        except:
+        except cusError:
             if u_input == 'True':
                 interpretation = True
                 list1.append(interpretation)
