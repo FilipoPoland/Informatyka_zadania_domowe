@@ -3,16 +3,13 @@
 # zakres: -50, 50
 # za pomoca for stworz liste
 # stworz liste z elementami z poprzedniej mniejsze od tej ktora poda uzytkownik
-
 # zadanie 2
 # 30 pseudolosowych liczb
 # zakres: -50, 50
 # stworz dwie nowe
 # pierwsza z parzystymi druga nieparzystymi
-
 # zadanie 3
 # Napisz funkcje sprawdzajaca czy liczba jest pierwsza
-
 
 # funkcja losująca liczby gdzie
 # getiteam1 - to ile
@@ -26,19 +23,21 @@ def los(getiteam1, getiteam2, getiteam3):
     return list_los
 
 
-#
+# getiteam to liczba ktora bierzemy pod uwage rozpatruja czy jest pierwsza
 def pierwsza(getiteam):
     dzielniki = [2, 3, 5, 7]
     zmienna = None
     for j in dzielniki:
         if j == getiteam:
             # gdy liczba jest wymienona w dzielnikach jest liczba pierwsza, musimy je wyrzucic od razu
-            zmienna = True
+            return True
         elif getiteam % j == 0:
+            # po sprawdzeniu ze nie ma jej we zbiorze dzielnikow jej podzielnosc swiadczy o tym ze nie jest pierwsza
+            # chcemy od razu oddac wartosc falsz
             return False
         else:
-            zmienna = True
             # prawda - nie podzielnosc przez te liczby pierwsze swiadczy o byciu liczba pierwsza
+            zmienna = True
     return zmienna
 
 
@@ -46,10 +45,10 @@ def pierwsza(getiteam):
 print('Zadanie 1:')
 while True:
     try:
-        u_input = int(input('Podaj liczbe: '))
+        u_input = int(input('Podaj liczbę, która ustali górną granicę dla listy liczby, które zostaną wylosowane: '))
         break
     except:
-        print('Podaj liczbe.')
+        print('- - - - - - B Ł Ą D - - - - - -')
 
 list2 = []
 for i in los(30, -50, 50):
@@ -77,10 +76,10 @@ print(f'liczby nieparzyste to: {listnp}\nLiczby parzyste to: {listp}')
 print('\nZadanie 3')
 while True:
     try:
-        u_input2 = int(input('Podaj liczbe: '))
+        u_input2 = int(input('Podaj liczbe, aby sprawdzić czy jest ona liczbą pierwszą: '))
         break
-    except TypeError:
-        print('Podaj liczbe: ')
+    except:
+        print('- - - - - - B Ł Ą D - - - - - -')
 
 # funkcja pierwsza zwraca wartosc logiczna
 if pierwsza(u_input2):
