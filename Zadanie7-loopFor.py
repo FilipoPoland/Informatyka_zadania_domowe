@@ -24,21 +24,35 @@ def los(getiteam1, getiteam2, getiteam3):
 
 
 # getiteam to liczba ktora bierzemy pod uwage rozpatruja czy jest pierwsza
+# def pierwsza(getiteam):
+#     dzielniki = [2, 3, 5, 7]
+#     zmienna = None
+#     for j in dzielniki:
+#         if j == getiteam:
+#             # gdy liczba jest wymienona w dzielnikach jest liczba pierwsza, musimy je wyrzucic od razu
+#             return True
+#         elif getiteam % j == 0:
+#             # po sprawdzeniu ze nie ma jej we zbiorze dzielnikow jej podzielnosc swiadczy o tym ze nie jest pierwsza
+#             # chcemy od razu oddac wartosc falsz
+#             return False
+#         else:
+#             # prawda - nie podzielnosc przez te liczby pierwsze swiadczy o byciu liczba pierwsza
+#             zmienna = True
+#     return zmienna
+
+# def pierwsza alterantywnie
 def pierwsza(getiteam):
-    dzielniki = [2, 3, 5, 7]
-    zmienna = None
-    for j in dzielniki:
-        if j == getiteam:
-            # gdy liczba jest wymienona w dzielnikach jest liczba pierwsza, musimy je wyrzucic od razu
-            return True
-        elif getiteam % j == 0:
-            # po sprawdzeniu ze nie ma jej we zbiorze dzielnikow jej podzielnosc swiadczy o tym ze nie jest pierwsza
-            # chcemy od razu oddac wartosc falsz
-            return False
+    wyniki = []
+    for z in range(2, getiteam + 1):
+        for j in wyniki:
+            if z % j == 0:
+                break
         else:
-            # prawda - nie podzielnosc przez te liczby pierwsze swiadczy o byciu liczba pierwsza
-            zmienna = True
-    return zmienna
+            wyniki.append(z)
+    if getiteam in wyniki:
+        return True
+    else:
+        return False
 
 
 # zadanie 1
