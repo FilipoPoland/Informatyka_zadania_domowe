@@ -92,11 +92,14 @@ def trapezpole():
 def gra_los():
     liczba = randint(1, 100)
     counter_los = 0
-    print('Została wylosowana liczba od 1 do 100. \n Aby przerwać wpisz escape.')
+    print('Została wylosowana liczba od 1 do 100. \nAby przerwać wpisz escape.')
     x = True
     while x:
-        user_liczba = input('O jakiej liczbie myślę?')
-        counter_los += 1
+        try:
+            user_liczba = int(input('O jakiej liczbie myślę?'))
+            counter_los += 1
+        except:
+            continue
         if user_liczba == 'escape':
             x = False
         elif int(user_liczba) == liczba:
@@ -204,15 +207,22 @@ def kk():
             while y:
                 try:
                     user = int(input('Podaj pole(zakres 1-9): '))
-                    if user < 10:
+                    if user < 1:
+                        y = True
+                    elif user < 10:
                         y = False
                 except:
                     print('Została podana nie poprawna wartość.')
+                    break
 
-            user -= 1
-            list1[user] = 'X'
-            list2.remove(user)
-            x = sprawdz(list1, zwyciestwo, list2)
+                user -= 1
+                try:
+                    list2.remove(user)
+                    list1[user] = 'X'
+                except:
+                    print('Podałeś zajętą komurkę.')
+                    y = True
+                x = sprawdz(list1, zwyciestwo, list2)
 
     print(plansza(list1), '\n', zwyciestwo[0])
 

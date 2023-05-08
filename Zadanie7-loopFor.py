@@ -48,7 +48,8 @@ while True:
         u_input = int(input('Podaj liczbę, która ustali górną granicę dla listy liczby, które zostaną wylosowane: '))
         break
     except:
-        print('- - - - - - B Ł Ą D - - - - - -')
+        print('- - - - - - - B Ł Ą D - - - - - - -'
+              'Proszę o podanie poprawnych danych')
 
 list2 = []
 for i in los(30, -50, 50):
@@ -79,7 +80,8 @@ while True:
         u_input2 = int(input('Podaj liczbe, aby sprawdzić czy jest ona liczbą pierwszą: '))
         break
     except:
-        print('- - - - - - B Ł Ą D - - - - - -')
+        print('- - - - - - - B Ł Ą D - - - - - - -'
+              'Proszę o podanie poprawnych danych')
 
 # funkcja pierwsza zwraca wartosc logiczna
 if pierwsza(u_input2):
